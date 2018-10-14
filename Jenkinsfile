@@ -1,3 +1,4 @@
+properties([parameters([text(defaultValue: 'master', description: 'select branch parameter', name: 'branch')]), pipelineTriggers([githubPush()])])
 node{
    stage('SCM Checkout'){
      git 'https://github.com/rameshkalirawana/maven'

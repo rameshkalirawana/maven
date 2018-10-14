@@ -1,4 +1,4 @@
-properties([parameters([choice(choices: ['master', 'dev',], description: 'select branch', name: 'branch')]), pipelineTriggers([githubPush()])])
+properties([parameters([choice(choices: ['master', 'dev'], description: 'select branch to build', name: 'branch')])])
 node{
    stage('SCM Checkout'){
 	echo "Pulling changes from branch ${params.branch}"

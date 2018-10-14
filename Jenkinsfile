@@ -1,11 +1,5 @@
 properties([parameters([text(defaultValue: 'master', description: 'select branch parameter', name: 'branch')]), pipelineTriggers([githubPush()])])
-node('slave')
-{
-
-    stage ('Clean Workspace'){
-        dir('/home/ubuntu/jenkins/workspace') {
-    deleteDir()
-}
+node('slave'){
    stage('SCM Checkout'){
      git 'https://github.com/rameshkalirawana/maven'
    }

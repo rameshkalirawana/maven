@@ -2,7 +2,7 @@ properties([parameters([choice(choices: ['master', 'dev'], description: 'select 
 node{
    stage('SCM Checkout'){
 	echo "Pulling changes from branch ${params.branch}"
-     git "https://github.com/rameshkalirawana/maven", branch: "${params.branch}"
+     git "https://github.com/rameshkalirawana/maven"
    }
    stage('Compile-Package'){
       // Get maven home path
